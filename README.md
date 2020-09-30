@@ -50,7 +50,7 @@ jobs:
     - uses: okteto/namespace@master
     
     - name: "Create stack"
-      uses: okteto/create-stack@master
+      uses: okteto/deploy-stack@master
       with:
         build: "true"
 ```

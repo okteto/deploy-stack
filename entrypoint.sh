@@ -25,5 +25,6 @@ cd $wd
 fi
 
 export OKTETO_HOME=$RUNNER_TEMP
+mkdir -p $OKTETO_HOME
 echo running: okteto stack deploy $params on $(pwd)
 okteto stack deploy $params

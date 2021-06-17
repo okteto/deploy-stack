@@ -24,5 +24,6 @@ if [ ! -z "$wd" ]; then
 cd $wd
 fi
 
+export OKTETO_HOME=$RUNNER_TEMP
 echo running: okteto stack deploy $params on $(pwd)
 okteto stack deploy $params

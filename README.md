@@ -23,6 +23,10 @@ The name of the deployment. If not specified it will use the one in your `okteto
 
 Set to `true` to build the images before deploying your stack.
 
+### `file` 
+
+The path to the manifest file. If not specified, it will default to `docker-compose.yaml` or ` okteto-stack.yaml`.
+
 ### `working-directory`
 
 The working directory of the action. Defaults to the root folder of the repo.

@@ -11,6 +11,9 @@ inputs:
     description: "Build the images before deploy the stack"
     required: false
     default: 'false'
+  file: 
+    description: "Path to the manifest file"
+    required: false
   working-directory:
     description: "Working directory, defaults to the root of the repo"
     required: false
@@ -21,6 +24,7 @@ runs:
     - ${{ inputs.namespace }}
     - ${{ inputs.name }}
     - ${{ inputs.build }}
+    - ${{ inputs.file }}
     - ${{ inputs.working-directory }}
 branding:
   color: 'green'

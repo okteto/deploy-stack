@@ -4,7 +4,9 @@ set -e
 namespace=$1
 name=$2
 build=$3
-wd=$4
+file=$4
+wd=$5
+
 
 params="--wait "
 
@@ -18,6 +20,10 @@ fi
 
 if [ "$build" == "true" ]; then
 params="${params} --build"
+fi
+
+if [ ! -z "$file" ]; then
+params="${params} --file $file"
 fi
 
 if [ ! -z "$wd" ]; then

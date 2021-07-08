@@ -59,3 +59,38 @@ jobs:
         build: "true"
 ```
 
+
+
+## Advanced usage
+
+ ### Custom Certification Authorities or Self-signed certificates
+
+ You can specify a custom certificate authority or a self-signed certificate by setting the `OKTETO_CA_CERT` environment variable. When this variable is set, the action will install the certificate in the container, and then execute the action. 
+
+ Use this option if you're using a private Certificate Authority or a self-signed certificate in your [Okteto Enterprise](http://okteto.com/enterprise) instance.  We recommend that you store the certificate as an [encrypted secret](https://docs.github.com/en/actions/reference/encrypted-secrets), and that you define the environment variable for the entire job, instead of doing it on every step.
+
+
+ ```yaml
+ # File: .github/workflows/workflow.yml
+ on: [push]
+
+ name: example
+
+ jobs:
+   devflow:
+     runs-on: ubuntu-latest
+     env:
+       OKTETO_CA_CERT: ${{ secrets.OKTETO_CA_CERT }}
+     steps:
+    
+     - uses: okteto/login@master
+       with:
+         token: ${{ secrets.OKTETO_TOKEN }}
+    
+     - uses: okteto/namespace@master
+    
+     - name: "Create stack"
+       uses: okteto/deploy-stack@master
+       with:
+         build: "true"
+```

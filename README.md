@@ -33,7 +33,7 @@ The working directory of the action. Defaults to the root folder of the repo.
 
 ## Example usage
 
-This example runs the login action and then creates the stack
+This example runs the context action and then creates the stack
 
 ```yaml
 # File: .github/workflows/workflow.yml
@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    - uses: okteto/login@latest
+    - uses: okteto/context@latest
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
     
@@ -83,7 +83,7 @@ jobs:
        OKTETO_CA_CERT: ${{ secrets.OKTETO_CA_CERT }}
      steps:
     
-     - uses: okteto/login@latest
+     - uses: okteto/context@latest
        with:
          token: ${{ secrets.OKTETO_TOKEN }}
     

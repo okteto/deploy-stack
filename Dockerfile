@@ -1,4 +1,4 @@
-FROM okteto/okteto:2.7.1
+FROM okteto/okteto:2.8.0
 ENV OKTETO_ORIGIN github_action
 
 COPY entrypoint.sh /entrypoint.sh

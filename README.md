@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> The Okteto Stacks GitHub actions are now deprecated. Learn more about our support for GitHub Actions [in our documentation](https://www.okteto.com/docs/reference/supported-github-actions/#available-actions).
+
 # GitHub Actions for Okteto Cloud
 
 ## Automate your development workflows using Github Actions and Okteto Cloud
